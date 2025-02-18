@@ -14,4 +14,13 @@ class Note:
         self.creation_date = datetime.now()
         self.tags: list[str] = []
 
+    def add_tag(self, tag: str):
+        if tag  not in self.tags:
+            self.tags.append(tag)
+
+    def __str__(self) -> str:
+        return f'Date : {self.creation_date} \n {self.title}: {self.text} '
+
+
+
 
