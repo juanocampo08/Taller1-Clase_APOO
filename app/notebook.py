@@ -22,5 +22,10 @@ class Note:
         return f'Date : {self.creation_date} \n {self.title}: {self.text} '
 
 
+class Notebook:
+    def __init__(self):
+        notes: list[Note] = []
+
+
 
 
