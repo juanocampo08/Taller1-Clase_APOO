@@ -31,6 +31,11 @@ class Notebook:
         note = Note(str(new_code), title, text, importance)
         self.notes.append(note)
         return new_code
+    def delete_note(self, code: int):
+        for note in self.notes:
+            if note.code == str(code):
+                self.notes.remove(note)
+                return
 
 
 
