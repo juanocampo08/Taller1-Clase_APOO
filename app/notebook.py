@@ -31,17 +31,28 @@ class Notebook:
         note = Note(str(new_code), title, text, importance)
         self.notes.append(note)
         return new_code
+
     def delete_note(self, code: int):
         for note in self.notes:
             if note.code == str(code):
                 self.notes.remove(note)
                 return
+
     def important_notes(self, importance) -> list[Note]:
         important_list: list[Note] = []
         for note in self.notes:
             if note.importance == Note.HIGH or note.importance == Note.MEDIUM:
                 important_list.append(note)
         return important_list
+
+    def note_by_tag(self, tag : str) -> list[Note]:
+        tag_list = []
+        for note in self.notes:
+            if tag in note.tags:
+                tag_list.append(note)
+        return tag_list
+
+
 
 
 
