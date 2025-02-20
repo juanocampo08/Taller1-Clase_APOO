@@ -28,6 +28,9 @@ class Notebook:
 
     def add_note(self, title:str, text:str, importance:str) -> int:
         new_code = len(self.notes) + 1
+        note = Note(str(new_code), title, text, importance)
+        self.notes.append(note)
+        return new_code
 
 
 
