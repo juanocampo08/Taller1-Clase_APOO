@@ -36,6 +36,12 @@ class Notebook:
             if note.code == str(code):
                 self.notes.remove(note)
                 return
+    def important_notes(self, importance) -> list[Note]:
+        important_list: list[Note] = []
+        for note in self.notes:
+            if note.importance == Note.HIGH or note.importance == Note.MEDIUM:
+                important_list.append(note)
+        return important_list
 
 
 
