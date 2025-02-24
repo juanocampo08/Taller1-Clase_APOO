@@ -32,6 +32,14 @@ class NotebookConsole:
         code : int = self.notebook.add_note(title, text, importance)
         self.console.print(f"Note added successfully with code {code}")
 
+    def list_notes(self):
+        if not self.notebook.notes:
+            self.console.print("No hay notas disponibles.")
+            return
+
+        for note in self.notebook.notes:
+            self.console.print(f"Note: {note.code} ; {note.title}")
+
     def run(self):
         option: int = 0
         while option != 8:
@@ -39,10 +47,15 @@ class NotebookConsole:
                 self.add_note()
             elif option == 2:
                 self.list_notes()
+            elif option == 2:
                 pass
             elif option == 2:
+                pass
             elif option == 2:
+                pass
             elif option == 2:
+                pass
             elif option == 2:
+                pass
             elif option == 2:
-            elif option == 2:
+                pass

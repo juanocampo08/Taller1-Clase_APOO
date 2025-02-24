@@ -30,7 +30,7 @@ class Notebook:
         new_code: int = len(self.notes) + 1
 
         for note in self.notes:
-            if note.code == str(new_code)
+            if note.code == str(new_code):
                 new_code += 1
 
         note = Note(str(new_code), title, text, importance)
@@ -61,4 +61,4 @@ class Notebook:
         tags: list[str] = []
         for note in self.notes:
             tags.extend(note.tags)
-
+        return max(set(tags), key=tags.count)
