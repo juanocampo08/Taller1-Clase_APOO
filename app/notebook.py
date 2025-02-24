@@ -27,7 +27,12 @@ class Notebook:
         self.notes: list[Note] = []
 
     def add_note(self, title:str, text:str, importance:str) -> int:
-        new_code = len(self.notes) + 1
+        new_code: int = len(self.notes) + 1
+
+        for note in self.notes:
+            if note.code == str(new_code)
+                new_code += 1
+
         note = Note(str(new_code), title, text, importance)
         self.notes.append(note)
         return new_code
@@ -41,7 +46,7 @@ class Notebook:
     def important_notes(self, importance) -> list[Note]:
         important_list: list[Note] = []
         for note in self.notes:
-            if note.importance == Note.HIGH or note.importance == Note.MEDIUM:
+            if note.importance in [Note.HIGH, Note.MEDIUM]:
                 important_list.append(note)
         return important_list
 
@@ -52,7 +57,8 @@ class Notebook:
                 tag_list.append(note)
         return tag_list
 
-
-
-
+    def tag_with_most_notes(self) -> str:
+        tags: list[str] = []
+        for note in self.notes:
+            tags.extend(note.tags)
 
